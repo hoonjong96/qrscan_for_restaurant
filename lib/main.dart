@@ -57,8 +57,7 @@ class _MainScreenState extends State<MainScreen> {
               ElevatedButton(
                   child: Text('다음으로'),
                   onPressed: () {
-                    //Navigator를 사용하여 화면 전환을 할 수 있지만 Get을 사용하여 더욱 간소화된 코드로 구현할 수 있습니다.
-                    Get.to(() => OrderMenuPage());
+                    //기존 flutter 기본 route 방식을 get route를 사용하여 화면 전환 및 테이블 번호를 전달.
                     Get.to(() => OrderMenuPage(), arguments: tableNum);
                     print('$tableNum 번 테이블');
                   },
