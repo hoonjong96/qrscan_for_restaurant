@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qrscan_for_restaurant/basketPage.dart';
+import 'package:qrscan_for_restaurant/main.dart';
 
 /** 2022-06-01 23:22 jongdroid
  * 해당 페이지는 블 번메인 페이지에서 큐알 스캔을 통해 받아온 테이호로 메뉴를 주문하는 페이지 입니다. (실제 매장 주문 불가)
@@ -25,6 +26,12 @@ class _OrderMenuPageState extends State<OrderMenuPage> {
       home: Scaffold(
         appBar: AppBar(
           title: Text('$tableNum번 테이블 입니다.'),
+          leading: IconButton(
+            icon: Icon(Icons.navigate_before),
+            onPressed: () {
+              Get.back();
+            },
+          ),
           actions: [
             IconButton(
               icon: Icon(Icons.shopping_cart),
