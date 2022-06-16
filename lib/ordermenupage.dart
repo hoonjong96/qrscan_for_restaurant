@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qrscan_for_restaurant/basketPage.dart';
-import 'package:qrscan_for_restaurant/main.dart';
 
 /** 2022-06-01 23:22 jongdroid
  * 해당 페이지는 블 번메인 페이지에서 큐알 스캔을 통해 받아온 테이호로 메뉴를 주문하는 페이지 입니다. (실제 매장 주문 불가)
  * 상태관리 학습을 위한 프로젝트로 장바구니 기능을 추가할 예정입니다.
-
  * [2022-06-14] 장바구니에 저장한 아이템 리스트를 장바구니에서 볼 수 있도록 수정중 입니다.
  */
 
