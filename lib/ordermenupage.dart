@@ -67,12 +67,9 @@ class _MenuListState extends State<MenuList> {
   // leading = 음식 image
   var foodImageList = ['image1.jpeg', 'image2.jpeg', 'image3.jpeg', 'image4.jpeg', 'image5.jpeg' ];
 
-  bool checkCartItem = false;
-
-  List<Icon> item = [Icon(Icons.remove_shopping_cart), Icon(Icons.remove_shopping_cart), Icon(Icons.remove_shopping_cart), Icon(Icons.remove_shopping_cart) , Icon(Icons.remove_shopping_cart)];
+  List<bool> checkCartList = [false, false, false, false, false];
 
   List<String> saveData = ['텅 비었습니다.'];
-
   List<String> saveData2 = [''];
 
   @override
@@ -83,23 +80,11 @@ class _MenuListState extends State<MenuList> {
         return ListTile(
           title: Text( '${foodNameList[index]}'),
           subtitle: Text( '${foodPrizeList[index]}원'),
-          leading: SizedBox( width: 45, height: 45,
-              child: Image.asset('image/${foodImageList[index]}')
-          ),
-          trailing: item[index],
+          trailing:Icon( checkCartList[index]  ? Icons.shopping_cart : Icons.remove_shopping_cart,
+          color: checkCartList[index] ? Colors.red : Colors.black,),
           onTap: () {
             setState(() {
-              checkCartItem =! checkCartItem;
-
-              if (checkCartItem == true) {
-                item[index] = Icon(Icons.shopping_cart, color: Colors.red,);
-                // Get.to(() => BasketPage(), arguments: foodNameList[index]);
-                // Get.to(() => BasketPage(), arguments: foodPrizeList[index]);
-                print('order : ${foodNameList[index]}');
-              }
-              else if(checkCartItem == false) {
-                item[index] = Icon(Icons.remove_shopping_cart);
-              }
+              checkCartList[index] =! checkCartList[index];
             });
           },
         );
